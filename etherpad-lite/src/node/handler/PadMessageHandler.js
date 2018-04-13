@@ -1155,6 +1155,20 @@ function handleClientReady(client, message)
 
       if(pad.head > 0) {
         accessLogger.info('[ENTER] Pad "'+padIds.padId+'": Client '+client.id+' with IP "'+ip+'" entered the pad');
+        var usuario = new Object();
+        usuario.pad=padIds.padId;
+        usuario.autor=client.id;
+        usuario.estado="borrar";
+        usuario.ip=ip;
+        usuario.port=settings.port;
+        var Clientee = require('node-rest-client').Client;
+        var cliente = new Clientee();
+        var args = {
+          data: usuario,
+          headers: { "Content-Type": "application/json" }
+        };
+        cliente.post("http://172.17.0.1:8080/loadBalancer/create", args, function (data, response) {
+        });
       }
       else if(pad.head == 0) {
         accessLogger.info('[CREATE] Pad "'+padIds.padId+'": Client '+client.id+' with IP "'+ip+'" created the pad');
