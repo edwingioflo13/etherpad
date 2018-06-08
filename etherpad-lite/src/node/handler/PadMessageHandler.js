@@ -142,7 +142,7 @@ exports.handleDisconnect = function(client)
       data: usuario,
       headers: { "Content-Type": "application/json" }
     };
-    cliente.post("http://172.17.0.1:8080/loadBalancer/leave", args, function (data, response) {
+    cliente.post("https://172.17.0.1:8080/loadBalancer/leave", args, function (data, response) {
     });
     //get the author color out of the db
     authorManager.getAuthorColorId(session.author, function(err, color)
@@ -1167,7 +1167,7 @@ function handleClientReady(client, message)
           data: usuario,
           headers: { "Content-Type": "application/json" }
         };
-        cliente.post("http://172.17.0.1:8080/loadBalancer/create", args, function (data, response) {
+        cliente.post("https://172.17.0.1:8080/loadBalancer/create", args, function (data, response) {
         });
       }
       else if(pad.head == 0) {
@@ -1184,7 +1184,7 @@ function handleClientReady(client, message)
           data: usuario,
           headers: { "Content-Type": "application/json" }
         };
-        cliente.post("http://172.17.0.1:8080/loadBalancer/create", args, function (data, response) {
+        cliente.post("https://172.17.0.1:8080/loadBalancer/create", args, function (data, response) {
         });
       }
 
