@@ -45,7 +45,8 @@
                       "mocha"                   : "2.4.5",
                       "supertest"               : "1.2.0",
                       "is-var-name"             : "1.0.0",
-                      "node-rest-client"        : "^3.1.0"
+                      "node-rest-client"        : "^3.1.0",
+                      "mongodb"                 : "2.2.33"
                      },
   "bin":             { "etherpad-lite": "./node/server.js" },
   "devDependencies": {
